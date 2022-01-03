@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
+             x:Class="Delivery.OrderDetail"
+             BackgroundColor="Black">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <!-- MAP FRAME-->
+            <Grid VerticalOptions="FillAndExpand">
+                <maps:Map x:Name="trackMap" IsShowingUser="True">
+
+                </maps:Map>
+                <Grid Grid.Row="0" x:Name="mainGrid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>                       
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <!-- CAPTION FRAME -->
+                    <Frame BackgroundColor="#dd000000" Padding="24" CornerRadius="0" Grid.Row="0" Opacity="0.8" x:Name="captionFrame">
+                        <Label  x:Name="captionText" Text="DELIVERY LOGIN" HorizontalTextAlignment="Center" TextColor="White" FontSize="24"/>
+                    </Frame>                    
+                    
+                    <!-- BUTTONS FRAME-->
+                    <Frame Grid.Row="1" BackgroundColor="#77000000" VerticalOptions="EndAndExpand" x:Name="buttonsFrame">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Button Text="TAKE ORDER" FontSize="24" BackgroundColor="#353" TextColor="White" Grid.Column="0" HeightRequest="100" Clicked="OnTakeOrderClicked" x:Name="actionButton"/>
+                            <Button Text="BACK" FontSize="24" BackgroundColor="#533" TextColor="White" Grid.Column="1" Clicked="OnBackClicked"/>
+                        </Grid>
+                    </Frame>
+                </Grid>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
